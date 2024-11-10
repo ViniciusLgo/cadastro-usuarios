@@ -2,15 +2,18 @@ import "./style.css";
 import Trash from "../../assets/trash.svg";
 
 function Home() {
-
-  const users = [{
-      nome: "Lucas",
+  const users = [
+    {
+      nome: "victor",
       idade: 20,
-      email: "
-    
-    }
-  ]
-
+      email: "victor@gmail.com",
+    },
+    {
+      nome: "aline",
+      idade: 44,
+      email: "alineri@gmail.com",
+    },
+  ];
 
   return (
     <div className="container">
@@ -23,30 +26,19 @@ function Home() {
         <button type="submit">Cadastrar</button>
       </form>
 
-      <div>
-        <div>
-          <h2>Nome</h2>
-          <h2>Idade</h2>
-          <h2>Email</h2>
+      {users.map((user) => (
+        <div key={user.id}>
+          <div>
+            <h2>Nome: {user.nome}</h2>
+            <h2>Idade: {user.idade}</h2>
+            <h2>Email:{user.email}</h2>
+          </div>
+          <button>
+            <img src={Trash} alt="" />
+          </button>
         </div>
-        <button>
-          <img src={Trash} alt="" />
-        </button>
-      </div>
-
-
-
+      ))}
     </div>
-        
-
-
-
-
-
-
-
-
-
   );
 }
 
